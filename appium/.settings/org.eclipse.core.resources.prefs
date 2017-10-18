@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+encoding//scrapy/cloudmusic/cloudmusic/items.py=utf-8
+encoding//scrapy/cloudmusic/cloudmusic/middlewares.py=utf-8
+encoding//scrapy/cloudmusic/cloudmusic/pipelines.py=utf-8
+encoding//scrapy/cloudmusic/cloudmusic/settings.py=utf-8
+encoding//scrapy/cloudmusic/cloudmusic/spiders/cloudmusic.py=utf8
+encoding//scrapy/heartsong/heartsong/items.py=utf-8
+encoding//scrapy/heartsong/heartsong/middlewares.py=utf-8
+encoding//scrapy/heartsong/heartsong/pipelines.py=utf-8
+encoding//scrapy/heartsong/heartsong/settings.py=utf-8
+encoding//scrapy/heartsong/heartsong/spiders/heartsong_spider.py=utf8
+encoding/test.py=utf-8
