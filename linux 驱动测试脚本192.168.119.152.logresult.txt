@@ -1,0 +1,33 @@
+驱动测试脚本结果##01通过
+##02通过
+##03通过
+##04未通过
+#04不信任进程隐藏elf文件
+##05通过
+##07通过
+##08通过
+##08未通过
+#09不信任进程在/tmp、/var/tmp、/dev/shm、/run/shm/目录下创建elf文件，告警不拦截
+ pass1
+ pass2
+ pass4
+##10通过
+##11case还有点问题 待修改
+#11不信任进程创建、修改免密码登录文件：authorized_keys
+##12通过
+##13通过
+##14通过
+##15通过
+##16通过
+##17未通过
+#17所有进程修改/bin、/lib目录下的elf文件
+ cp: cannot create regular file `/lib/liblogin_restrict_linux.so': Permission denied
+ ./sys-ver0927.sh: line 146: echo: write error: Permission denied
+ ./sys-ver0927.sh: line 147: echo: write error: Permission denied
+ /opt/elf/nginx: write error: Permission denied
+ /opt/elf/nginx: write error: Permission denied
+##18通过
+##19通过
+##20通过
+##21通过
+##22通过

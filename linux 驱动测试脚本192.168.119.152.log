@@ -1,0 +1,88 @@
+#01/bin目录创建隐藏文件夹
+/opt/elf/mysqld: cannot create directory `/bin/.test': Permission denied
+#02bin和lib目录下elf文件重命名
+/opt/elf/httpd: cannot move `/bin/vi' to `/bin/testvi': Permission denied
+/opt/elf/httpd: cannot move `/lib/vi' to `/lib/testvi': Permission denied
+#03创建密码文件软连接
+ln: creating symbolic link `/root/passwd': Permission denied
+ln: creating symbolic link `/root/shadow': Permission denied
+#04不信任进程隐藏elf文件
+#05启动进程，/dev/shm,/run/shm目录里的进程
+./sys-ver0927.sh: line 67: /dev/shm/ls: Permission denied
+./sys-ver0927.sh: line 71: /run/shm/ls: No such file or directory
+#07不信任进程创建elf文件
+pass
+#08程序自我复制
+pass
+#09不信任进程在/tmp、/var/tmp、/dev/shm、/run/shm/目录下创建elf文件，告警不拦截
+pass1
+pass2
+pass4
+#10添加系统启动项
+touch: cannot touch `/etc/init.d/test': Permission denied
+touch: cannot touch `/etc/rc0.d/test': Permission denied
+touch: cannot touch `/etc/rc1.d/test': Permission denied
+touch: cannot touch `/etc/rc2.d/test': Permission denied
+touch: cannot touch `/etc/rc3.d/test': Permission denied
+touch: cannot touch `/etc/rc4.d/test': Permission denied
+touch: cannot touch `/etc/rc5.d/test': Permission denied
+touch: cannot touch `/etc/rc6.d/test': Permission denied
+#11不信任进程创建、修改免密码登录文件：authorized_keys
+#12创建定时任务脚本,告警不拦截
+/opt/elf/php: cannot touch `/var/spool/cron/tom': Permission denied
+/opt/elf/php: cannot touch `/etc/cron.d/abc': Permission denied
+#13所有进程修改boot目录下的文件
+/opt/elf/nginx: write error: Permission denied
+./sys-ver0927.sh: line 129: echo: write error: Permission denied
+#14所有进程删除boot目录下的文件
+rm: cannot remove `/boot/test': Permission denied
+#15不信任进程修改/etc/passwd和/etc/shadow
+/opt/elf/nginx: write error: Permission denied
+/opt/elf/nginx: write error: Permission denied
+#16所有进程修改/etc/pam.d/下的文件
+/opt/elf/nginx: write error: Permission denied
+rm: cannot remove `/etc/pam.d/test': Permission denied
+#17所有进程修改/bin、/lib目录下的elf文件
+cp: cannot create regular file `/lib/liblogin_restrict_linux.so': Permission denied
+./sys-ver0927.sh: line 146: echo: write error: Permission denied
+./sys-ver0927.sh: line 147: echo: write error: Permission denied
+/opt/elf/nginx: write error: Permission denied
+/opt/elf/nginx: write error: Permission denied
+#18不信任进程修改文件
+/opt/elf/httpd: cannot move `/etc/profile' to `/etc/profile.bak': Permission denied
+/opt/elf/nginx: write error: Permission denied
+/opt/elf/nginx: write error: Permission denied
+/opt/elf/nginx: write error: Permission denied
+/opt/elf/nginx: write error: Permission denied
+/opt/elf/nginx: write error: Permission denied
+#19所有进程删除文件，/etc/passwd、/etc/shadow
+rm: cannot remove `/etc/passwd': Permission denied
+rm: cannot remove `/etc/shadow': Permission denied
+#20不信任进程删除文件
+/opt/elf/apache2: cannot remove `/etc/profile': Permission denied
+/opt/elf/apache2: cannot remove `/etc/profile.d/test': Permission denied
+/opt/elf/apache2: cannot remove `/etc/ssh/sshd_config': Permission denied
+/opt/elf/apache2: cannot remove `/etc/syslog.conf': Permission denied
+/opt/elf/apache2: cannot remove `/etc/bashrc': Permission denied
+/opt/elf/apache2: cannot remove `/etc/inittab': Permission denied
+#21所有进程删除/etc/pam.d/下的文件
+/opt/elf/apache2: cannot remove `/etc/pam.d/sshd': Permission denied
+/opt/elf/apache2: cannot remove `/etc/pam.d/common-password': Permission denied
+/opt/elf/apache2: cannot remove `/etc/pam.d/cron': Permission denied
+/opt/elf/apache2: cannot remove `/etc/pam.d/atd': Permission denied
+/opt/elf/apache2: cannot remove `/etc/pam.d/test': Permission denied
+/opt/elf/apache2: cannot remove `/etc/pam.d/ppp': Permission denied
+/opt/elf/apache2: cannot remove `/etc/pam.d/common-account': Permission denied
+/opt/elf/apache2: cannot remove `/etc/pam.d/su': Permission denied
+/opt/elf/apache2: cannot remove `/etc/pam.d/common-auth': Permission denied
+/opt/elf/apache2: cannot remove `/etc/pam.d/common-session': Permission denied
+/opt/elf/apache2: cannot remove `/etc/pam.d/chfn': Permission denied
+/opt/elf/apache2: cannot remove `/etc/pam.d/other': Permission denied
+/opt/elf/apache2: cannot remove `/etc/pam.d/chsh': Permission denied
+/opt/elf/apache2: cannot remove `/etc/pam.d/passwd': Permission denied
+/opt/elf/apache2: cannot remove `/etc/pam.d/login': Permission denied
+/opt/elf/apache2: cannot remove `/etc/pam.d/sudo': Permission denied
+#22非正常目录下创建elf文件,/tmp/,/var/tmp/,告警不拦截
+pass
+pass
+#23黑名单进程执行命令
