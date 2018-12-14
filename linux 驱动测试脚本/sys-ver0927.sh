@@ -9,8 +9,7 @@
 
 
 
-#todo在/opt/elf文件夹中创建vi、wget、touch、liblogin_restrict_linux.so
-#todo Case11修改
+#在/opt/elf文件夹中创建vi、wget、touch、liblogin_restrict_linux.so
 #在所有用到系统文件。比如/bin/vi这类的文件时，先判断有没有该文件，如果没有，创建一个
 cd /opt/
 if [ ! -d "/opt/elf/" ]; then   #判断如果没有文件夹的话，创建文件夹
@@ -22,6 +21,16 @@ fi
 if [ ! -f "/opt/xtjg.log" ]; then  #判断如果没有文件的话，创建文件
  touch /opt/xtjg.log
 fi
+if [ ! -f "/etc/bashrc" ]; then  #判断如果没有文件的话，创建文件
+ touch /etc/bashrc
+fi
+if [ ! -f "/etc/inittab" ]; then  #判断如果没有文件的话，创建文件
+ touch /etc/inittab
+fi
+if [ ! -f "/etc/zshrc" ]; then  #判断如果没有文件的话，创建文件
+ touch /etc/zshrc
+fi
+
 cp /usr/bin/vi /opt/elf/
 cd /opt/elf/
 #将用到的命令重命名为不信任进程的名字
